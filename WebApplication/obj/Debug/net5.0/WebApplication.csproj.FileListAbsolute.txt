@@ -39,7 +39,6 @@ C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\Ra
 C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\Razor\Views\Student\Index.cshtml.g.cs
 C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\WebApplication.RazorTargetAssemblyInfo.cache
@@ -50,3 +49,5 @@ C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\We
 C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\ref\WebApplication.dll
 C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\WebApplication.pdb
 C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\WebApplication.genruntimeconfig.cache
+C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\Razor\Views\Student\AddStudentForm.cshtml.g.cs
+C:\Users\Alberto\RiderProjects\WebApplication\WebApplication\obj\Debug\net5.0\Razor\Views\Student\StudentList.cshtml.g.cs

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MySql.Data.MySqlClient;
 using WebApplication.Models;
 
 
@@ -27,7 +28,7 @@ namespace WebApplication
         {
             services.AddControllersWithViews();
             services.AddMvc();
-            services.Add(new ServiceDescriptor(typeof(StudentContext),new StudentContext(Configuration.GetConnectionString("DefaultConnection"))));
+            services.AddTransient(_ => new MySqlConnection(Configuration["ConnectionStrings:DefaultConnection"]));
 
         }
 
