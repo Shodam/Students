@@ -22,9 +22,9 @@ namespace WebApplication.Controllers
             {
                 list.Add(new Student(){
                     StudentId = Convert.ToInt32(reader["StudentId"]),
-                    FirstName = reader["First Name"].ToString(),
-                    LastName = reader["Last Name"].ToString(),
-                    Gpa = Convert.ToDouble(reader["Gpa"])
+                    FirstName = reader["FirstName"].ToString(),
+                    LastName = reader["LastName"].ToString(),
+                    Gpa = Convert.ToDouble(reader["GPA"])
                 });
             }
             return View(list);
@@ -34,6 +34,30 @@ namespace WebApplication.Controllers
         {
             return View();
         }
-        
+
+        [HttpPost]
+        public IActionResult AddStudentForm(Student stud)
+        {
+            try
+            {
+                int studentId = Convert.ToInt32(stud.StudentId);
+                String firstname = stud.FirstName;
+                String lastname = stud.LastName;
+                double gpa = Convert.ToDouble(stud.Gpa);
+                String command = $"INSERT INTO students VALUES ({studentId},'{firstname}','{lastname}',{gpa});";
+                using var con = new MySqlConnection("server=localhost;port=3306;database=studentdatabase;user=shodam;password=Evelash4482519");
+                var cmd = new MySqlCommand(command, con);
+                con.Open();
+                using var reader = cmd.ExecuteReader();
+                Console.WriteLine("Saving Data");
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return View();
+        }
+
     }
 }

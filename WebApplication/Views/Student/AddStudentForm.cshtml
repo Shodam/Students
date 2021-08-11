@@ -7,10 +7,10 @@
 
 @using (Html.BeginForm("AddStudentForm", "Student", FormMethod.Post))
 {
-    <span>Enter Your StudentID:</span> @Html.TextBoxFor(m => m.StudentId)<br />
-    <span>Enter Your First Name: </span> @Html.TextBoxFor(m => m.FirstName)<br />
-    <span>Enter Your Last Name: </span>@Html.TextBoxFor(m => m.LastName)<br />
-    <span>Enter Your GPA: </span>@Html.TextBoxFor(m => m.Gpa)<br />
+    <span>Enter Your StudentID:</span> @Html.TextBoxFor(student => student.StudentId, new {@StudentId = "myStudentId"}) <br />
+    <span>Enter Your First Name: </span> @Html.TextBoxFor(student => student.FirstName)<br />
+    <span>Enter Your Last Name: </span>@Html.TextBoxFor(student => student.LastName)<br />
+    <span>Enter Your GPA: </span>@Html.TextBoxFor(student => student.Gpa)<br />
  
-    <input id = "Submit" type = "submit" value = "submit" />
+    <input type = "submit" value = "Submit" />
 }

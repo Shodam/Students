@@ -10,16 +10,20 @@ namespace WebApplication.Models
 {
     public class Student
     {
-        [Required(ErrorMessage = "First name is required.")] 
+        [Required(ErrorMessage = "Student Id is required.")]
+        [Column("StudentID")]
         public int StudentId { get; set; }
         
         [Required(ErrorMessage = "First name is required.")]
+        [Column("FirstName")]
         public string FirstName { get; set; }
         
         [Required(ErrorMessage = "Last name is required.")] 
+        [Column("LastName")]
         public string LastName { get; set; }
         
         [Required(ErrorMessage = "GPA is required.")] 
+        [Column("GPA")]
         public double Gpa { get; set; }
     }
 }
