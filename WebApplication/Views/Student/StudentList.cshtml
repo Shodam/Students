@@ -1,7 +1,7 @@
 @model IEnumerable<WebApplication.Models.Student>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "All Students";
     Layout = "_Layout";
 }
 <table class="table">
@@ -26,7 +26,6 @@
             <td>
                 @Html.DisplayTextFor(modelItem => item.Gpa)
             </td>
-            
         </tr>
     }
 </table>

@@ -1,0 +1,16 @@
+@model WebApplication.Models.Student
+@{
+    ViewData["Title"] = "Add Student";
+    Layout = "_Layout";
+}
+<h1>@ViewData["Title"]</h1>
+
+@using (Html.BeginForm("AddStudentForm", "Student", FormMethod.Post))
+{
+    <span>Enter Your StudentID:</span> @Html.TextBoxFor(m => m.StudentId)<br />
+    <span>Enter Your First Name: </span> @Html.TextBoxFor(m => m.FirstName)<br />
+    <span>Enter Your Last Name: </span>@Html.TextBoxFor(m => m.LastName)<br />
+    <span>Enter Your GPA: </span>@Html.TextBoxFor(m => m.Gpa)<br />
+ 
+    <input id = "Submit" type = "submit" value = "submit" />
+}
