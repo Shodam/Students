@@ -29,6 +29,7 @@ namespace WebApplication
             services.AddControllersWithViews();
             services.AddMvc();
             services.AddTransient(_ => new MySqlConnection(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddSession();
 
         }
 
@@ -47,6 +48,7 @@ namespace WebApplication
             }
 
             app.UseHttpsRedirection();
+            app.UseSession();
             app.UseStaticFiles();
 
             app.UseRouting();
