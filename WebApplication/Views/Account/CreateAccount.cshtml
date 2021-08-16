@@ -1,0 +1,28 @@
+@model Student;
+
+<h3>Create Account Page</h3>
+@ViewBag.error
+<form method="post" asp-controller="Account" asp-action="CreateAccount">
+    <table border="0" cellpadding="2" cellspacing="2">
+        <tr>
+            <td>Username</td>
+            <td><input type="text" name="Username"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td>First Name:</td>
+            <td><input type="text" name="Firstname"></td>
+            </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><input type="text" name="Lastname"></td>
+            </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Create Account"></td>
+        </tr>
+    </table>
+</form>
