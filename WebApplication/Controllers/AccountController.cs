@@ -27,10 +27,9 @@ namespace WebApplication.Controllers
             {
                 try
                 {
-                    var list = new List<Student>();
                     using var con = new MySqlConnection("server=localhost;port=3306;database=studentdatabase;user=shodam;password=Evelash4482519");
                     con.Open();
-                    string command = $"SELECT Username, Password FROM admin WHERE Username=\"{username}\" AND Password=\"{password}\"";
+                    string command = $"SELECT Username, Password FROM admin WHERE Username=\"{username}\" AND Password= AES_ENCRYPT(\"{password}\",\"secret\")";
                     var cmd = new MySqlCommand(command, con);
                     using var reader = cmd.ExecuteReader();
                     while (reader.Read())
@@ -58,6 +57,38 @@ namespace WebApplication.Controllers
             }
             
             return View("Index");
+        }
+
+        [Route("CreateAccount")]
+        public IActionResult CreateAccount(string username, string firstname, string lastname, string password)
+        {
+            if (username != null && password != null && firstname != null && lastname != null)
+            {
+                try
+                {
+                    using var con = new MySqlConnection(
+                        "server=localhost;port=3306;database=studentdatabase;user=shodam;password=Evelash4482519");
+                    con.Open();
+                    string command = $"INSERT INTO admin VALUES (\"{username}\", \"{firstname}\", \"{lastname}\", AES_ENCRYPT(\"{password}\",\"secret\"));";
+                    var cmd = new MySqlCommand(command, con);
+                    using var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        username = reader["Username"].ToString();
+                        
+                    }
+                    HttpContext.Session.SetString("username", username);
+                    return View("Index");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    ViewBag.error = $"{e}";
+                    return View("CreateAccount");
+                }
+            }
+
+            return View("CreateAccount");
         }
 
         [Route("logout")]
